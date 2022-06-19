@@ -12,4 +12,12 @@
 	 echo Z > z
 #### 2) Solução `cat`
 	 cat > Z
-> Digite o `Z` em seguida de um `enter` para adicionar a quebra de linha. Pressione `CTRL+D` para sair do comando `cat`
+> Digite o `Z` em seguida de um `enter` para adicionar a quebra de linha. Pressione `CTRL+D` para sair do comando `cat`.
+	   
+---
+---
+
+
+## Documentação:
+https://linuxhint.com/bash_echo/
+https://linuxhint.com/cat-command-bash/
