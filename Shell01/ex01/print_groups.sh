@@ -1,2 +1,2 @@
-#!/bin/bash
-id -Gn $FT_USER | tr ' ' ',' | tr -d "\n"
+#!/bin/sh
+groups $FT_USER | tr -s ' ' ',' | awk '{print$0}'
