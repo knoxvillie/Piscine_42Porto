@@ -1,13 +1,18 @@
 #include <unistd.h>
 
-void	ft_print_reverse_alphabet(void)
-{
-	char	 c;
+void ft_print_reverse_alphabet(void);
 
-	c = 'z';
-	while (c >= 'a')
-	{
-		write (1, &c, 1);
-		 c--;
-	}
+void ft_print_reverse_alphabet(void){
+    
+    char letra = 'z';
+
+    while(letra >= 'a'){
+        write(1, &letra, 1);
+        letra--;
+    }
+}
+
+int main(void){
+    ft_print_reverse_alphabet();
+    return 0;
 }
