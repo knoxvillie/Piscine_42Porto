@@ -1,0 +1,1 @@
+ printf("%lu\n", sizeof(a));
