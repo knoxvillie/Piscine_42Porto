@@ -1,13 +1,18 @@
-#include <unistd.h>
+#include <stdio.h>
 
-void	ft_putstr(char *str)
-{
-	int	i;
+int ft_strlen(char *str);
 
-	i = 0;
-	while (str[i] != '\0')
-	{
-		write (1, &str[i], 1);
-		i++;
-	}	
+int ft_strlen(char *str){
+    int i;
+
+    i=0;
+    while (str[i] != '\0'){
+        i++;
+    }
+    return i;
+}
+
+int main(void){
+    char texto[] = "Hello World";
+    printf("%d", ft_strlen(texto));
 }
