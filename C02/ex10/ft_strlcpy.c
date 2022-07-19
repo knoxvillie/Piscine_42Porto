@@ -1,28 +1,24 @@
-int	ft_strlen(char *str)
-{
-	int	i;
+#include<stdio.h>
 
-	i = 0;
-	while(str[i] != '\0')
-		i++;
-	return(i);
+unsigned int ft_strlcpy(char *dest, char* src, unsigned int size);
+
+int main(void){
+    char dest[20], src[20] = "Helloworld";
+    unsigned int i = 11;
+
+    printf("%d", ft_strlcpy(dest, src,i));
+    return 0;
 }
 
-unsigned int	ft_strlcpy(char *dest, char *src, unsigned int size)
-{
-	unsigned int	i;
-	unsigned int	x;
+unsigned int ft_strlcpy(char *dest, char* src, unsigned int size){
+    unsigned i;
 
-	x = ft_strlen(src);
-	i = 0;
-	if (size != 0)
-	{
-		while (src [i] != '\0' && i < size - 1)
-		{
-			dest[i] = src[i];
-			i++;
-		}
-		dest[i] = '\0';
-	}
-	return (x);
+    for(i=0; i<size-1; i++){
+
+        dest[i] = src[i];
+    }
+    
+    dest[i] = '\0';
+    
+    return i;
 }

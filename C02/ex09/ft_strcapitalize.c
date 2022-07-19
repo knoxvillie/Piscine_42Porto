@@ -1,38 +1,36 @@
-char	*ft_strlowcase(char *str)
-{
-	int	i;
+#include<stdio.h>
 
-	i = 0;
-	while (str[i] != '\0')
-	{
-		if (str[i] >= 'A' && str[i] <= 'Z')
-			str[i] += 32;
-		i++;
-	}
-	return (str);
+char *ft_strcapitalize(char *str);
+
+int main(void){
+    char texto[] = "oi, tudo bem? 42PAlavraS quarenta-e-duas; cinquenta+e+um";
+    
+    printf("%s", ft_strcapitalize(texto));
+    return 0;
 }
 
-char	*ft_strcapitalize(char *str)
-{
-	int		i;
-	int		i1;
+char *ft_strcapitalize(char *str){
+    int i, iniciopalavra = 1;
 
-	i = 0;
-	i1 = 1;
-	ft_strlowcase(str);
-	while (str[i] != '\0')
-	{
-		if (str[i] >= 'a' && str[i] <= 'z')
-		{
-			if (i1 == 1)
-				str[i] -= 32;
-			    i1 = 0;
-		}
-		else if (str[i] >= '0' && str[i] <= '9')
-			i1 = 0;
-		else
-			i1 = 1;
-		i++;
-	}
-	return (str);
+    for(i=0; str[i]!='\0'; i++){
+
+        if(iniciopalavra && (str[i]>='a' && str[i]<='z')){
+            str[i] -= 32;
+            iniciopalavra = 0;
+        }
+
+        else if(!(str[i]>='a' && str[i]<='z') && !(str[i]>='A' && str[i]<='Z') && !(str[i]>='0' && str[i]<='9')){
+            iniciopalavra = 1;
+        }
+
+        else if(!iniciopalavra && (str[i]>='A' && str[i]<='Z')){
+            str[i] += 32;
+        }
+        
+        else {
+            iniciopalavra = 0;
+        }        
+    }
+
+    return str;
 }
