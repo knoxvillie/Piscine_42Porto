@@ -1,1 +1,0 @@
-# Falta a lógica da base octagonal

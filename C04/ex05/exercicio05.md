@@ -1,1 +1,0 @@
-# Funciona com base numéricas, acredito que resolva o problemas, depois tentar acrescentar hexadecimal.
