@@ -1,18 +1,17 @@
-#include <unistd.h>
-void	ft_putstr(char *str)
-{
-	int	i;
+#include<unistd.h>
 
-	i = 0;
-	while (str[i] != '\0')
-	{
-		write (1, &str[i], 1);
-		i++;
-	}
+void ft_putstr(char *str);
+
+int main(void){
+    char str[100] = "hello world";
+
+    ft_putstr(str);
+    return 0;
 }
-/*
- int main()
- {
- 	ft_putstr("Hello World!");
- }
- */
+
+void ft_putstr(char *str){
+    
+    for(;*str; str++){
+        write(1, str, 1);
+    }
+}

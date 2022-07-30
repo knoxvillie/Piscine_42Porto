@@ -1,68 +1,95 @@
-#include <unistd.h>
+#include<unistd.h>
+#include<stdio.h>
 
-void	ft_putchar(char c)
-{
-	write(1, &c, 1);
+void ft_putchar(char c);
+void ft_putnbr_base(int nbr, char *base);
+void base10tobasen(int numero, int i);
+int checarbase(char *base);
+
+int main(void){
+    int numero_base10 = 876;
+    char *base;
+    
+    base = "0123456789abcdef";
+    ft_putnbr_base(numero_base10, base);
+    base = "01";
+    ft_putnbr_base(numero_base10, base);
+    base = "0123456789";
+    ft_putnbr_base(numero_base10, base);
+
+
+    return 0;
 }
 
-int	ft_strlen(char *str)
-{
-	int	i;
-
-	i = 0;
-	while (str[i])
-		i++;
-	return (i);
+void ft_putchar(char c){
+    write(1, &c, 1);
 }
 
-int	checkerror(char *str)
-{
-	int	i;
-	int	j;
-	int	x;
-	
-	x = ft_strlen(str);
-	i = 0;
-	if (str[0] == '\0' || x == 1)
-		return (0);
-	while (str[i] != '\0')
-	{
-		if (str[i] <= 32 || str[i] == 127 || str[i] == 43 || str[i] == 45)
-			return (0);
-		j = i + 1;
-		while (j < ft_strlen(str))
-		{
-			if (str[i] == str[j])
-				return (0);
-			j++;
-		}
-		i++;
-	}
-	return (1);
+void base10tobasen(int numero, int i){
+
+    if(numero<0){
+        numero*=-1;
+        ft_putchar('-');
+    }
+    else if(numero<i){
+        if(numero<10){
+            ft_putchar(numero + '0');
+        }
+        else{
+            ft_putchar(numero - 10 + 'A');
+        }
+    }
+    else{
+        base10tobasen(numero/i, i);
+        base10tobasen(numero%i, i);
+    }
 }
 
-void	ft_putnbr_base(int nbr, char *base)
-{
-	int	len;
-	int	error;
-	long	nb;
+void ft_putnbr_base(int nbr, char *base){
+    unsigned int i;
 
-	error = checkerror(base);
-	len = ft_strlen(base);
-	nb = nbr;
-	if (error == 1)
-	{
-		if (nb < 0)
-		{
-			ft_putchar('-');
-			nb *= -1;
-		}
-		if (nb < len)
-			ft_putchar(base[nb]);
-		if (nb >= len)
-		{
-			ft_putnbr_base(nb / len, base);
-			ft_putnbr_base(nb % len, base);
-		}
-	}
+    if(i = checarbase(base)){
+
+        ft_putchar('0');
+
+        if(i==2){
+            ft_putchar('b');
+            base10tobasen(nbr, i);
+        }
+        else if(i==8){
+
+        }
+        else if(i==10){
+            ft_putchar('d');
+            base10tobasen(nbr, i);
+        }
+        else{
+            ft_putchar('x');
+            base10tobasen(nbr, i);
+        }
+        ft_putchar('\n');
+    }
+}
+
+int checarbase(char *base){
+    int tamanhobase, e = 0, f;
+
+    for(tamanhobase=0; base[tamanhobase]; tamanhobase++){}
+    if(tamanhobase<2){
+        return 0;
+    }
+    while(base[e]){
+        if(base[e]=='+' || base[e]=='-'){
+            return 0;
+        }
+        f = e + 1;
+        while(base[f]){
+            if(base[e] == base[f]){
+                return 0;
+            }
+            f++;
+        }
+        e++;
+    }
+    return tamanhobase;
 }

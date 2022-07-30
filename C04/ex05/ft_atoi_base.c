@@ -1,83 +1,96 @@
-#include <stdio.h>
-int	checkerror(char *str)
-{
-	int	i;
-	int	j;
+#include<stdio.h>
 
-	i = 0;
-	if (str[0] == '\0' || str[1] == '\0')
-		return (0);
-	while (str[i] != '\0')
-	{
-		if (str[i] <= 32 || str[i] == 127 || str[i] == 43 || str[i] == 45)
-			return (0);
-		j = i + 1;
-		while (str[j] != '\0')
-		{
-			if (str[i] == str[j])
-				return (0);
-			j++;
-		}
-		i++;
-	}
-	return (i);
+int ft_atoi_base(char *str, char *base);
+int checarbase(char *base);
+int basentobase10(int numero, int tamanhobase);
+int putnbr(int numero, int tamanhobase);
+
+
+int main(void){
+    char str[] = "   ---+--+03110211ab567";
+    char base[] = "0123";
+
+    printf("%d ", ft_atoi_base(str, base));
+
+    return 0;
 }
 
-int	nb_base(char str, char *base)
-{
-	int nb;
+int ft_atoi_base(char *str, char *base){
+    int sinal = 1, numero = 0;
+    unsigned int tamanhobase;
 
-	nb = 0;
-	while (base[nb] != '\0')
-	{
-		if (str == base[nb])
-			return (nb);
-		nb++;
-	}
-	return (-1);
+    if(tamanhobase = checarbase(base)){
+
+        for(; *str == 32 || *str >= 9 && *str <= 13; str++){} /* Espaços vazios */
+        for(; *str == 43 || *str == 45; *str++){ /* Sinais */
+            if(*str == 45){
+                sinal *= -1;
+            }
+        }
+        for(; *str >= 48 && *str <= 57; str++){ 
+            numero = (numero * 10) + *str - 48;
+        }
+        
+        for(; *str; str++){} /* Overflow */
+
+        return (putnbr(numero, tamanhobase) * sinal);
+    }
+    return 0;
 }
 
-int	whitespaces(char *str, int *ptr_i)
-{
-	int	count;
-	int	i;
+int checarbase(char *base){
+    int tamanhobase, e = 0, f;
 
-	i = 0;
-	while ((str[i] >= 9 && str[i] <= 13) || str[i] == 32)
-		i++;
-	count = 1;
-	while (str[i] && (str[i] == 43 || str[i] == 45))
-	{
-		if (str[i] == 45)
-			count *= -1;
-		i++;
-	}
-	*ptr_i = i;
-	return (count);
+    for(tamanhobase=0; base[tamanhobase]; tamanhobase++){}
+    if(tamanhobase<2){
+        return 0;
+    }
+    while(base[e]){
+        if(base[e]=='+' || base[e]=='-'){
+            return 0;
+        }
+        f = e + 1;
+        while(base[f]){
+            if(base[e] == base[f]){
+                return 0;
+            }
+            f++;
+        }
+        e++;
+    }
+    return tamanhobase;
 }
 
-int		ft_atoi_base(char *str, char *base)
-{
-	int		i;
-	int		negative;
-	int		nb;
-	int		nb2;
-	int		begin_len;
+int basentobase10(int numero, int tamanhobase){
 
-	nb = 0;
-	i = 0;
-	begin_len = checkerror(base);
-	if (begin_len >= 2)
-	{
-		negative = whitespaces(str, &i);
-		nb2 = nb_base(str[i], base);
-		while (nb2 != -1)
-		{
-			nb = (nb * begin_len) + nb2;
-			i++;
-			nb2 = nb_base(str[i], base);
-		}
-		return (nb *= negative);
-	}
-	return (0);
+}
+
+int putnbr(int numero, int tamanhobase){
+    int e, valor_exp;
+    static int somatorio = 0;
+    static int contador = -1;
+
+
+    if(numero > tamanhobase){
+        putnbr(numero%10, tamanhobase);
+        putnbr(numero/10, tamanhobase);
+    }
+    else{
+        contador++;
+
+        if(contador == 0){
+            somatorio = numero;
+        }
+        else if(contador == 1){
+            somatorio += numero*tamanhobase;
+        }
+        else{
+            valor_exp = tamanhobase;
+            for(e=0; e < contador-1; e++){
+                valor_exp *= tamanhobase;
+            }
+            somatorio += numero*valor_exp;
+        }
+    }
+    return somatorio;
 }
