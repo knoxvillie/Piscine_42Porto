@@ -1,28 +1,24 @@
-int	ft_sqrt(int nb)
-{
-	long	index;
-	long	b;
+#include<stdio.h>
 
-	b = nb;
-	if (b <= 0)
-	{
-		return (0);
-	}
-	if (b == 1)
-	{
-		return (1);
-	}
-	index = 2;
-	if (b >= 2)
-	{
-		while (index * index <= b)
-		{
-			if (index * index == b)
-			{
-				return (index);
-			}
-			index++;
-		}
-	}
-	return (0);
+int ft_sqrt(int nb);
+
+int main(void){
+    int numero = 999;
+    
+    printf("%d ", ft_sqrt(numero));
+    return 0;
+}
+
+int ft_sqrt(int nb){
+    int num = 0;
+
+    while (num*num < nb){
+        num++;
+    }
+    if (num*num == nb){
+        return num;
+    }
+    else{
+        return 0;
+    }
 }
