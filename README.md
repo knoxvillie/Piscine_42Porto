@@ -1,6 +1,6 @@
 # 42 Piscine Porto
  Neste repositório tem todo meu percurso na Piscine da 42 Porto. <br/>
- Logo após o Check in começei a estudar para a Piscine, cerca de 2 meses antes. Este é o motivo de existir a pasta [Minha Preparação](./preparacao). Conforme eu aprendia, escrevia um arquivo de texto no intuito de aprender ensinando e relembrar durante a Piscine. ==Importante==: Quando eu os escrevi não tinha conhecimento sobre a `Norminette` nem da `Moulinette`, por isso são uma boa fonte para aprender, mas não os copie!
+ Logo após o Check in começei a estudar para a Piscine, cerca de 2 meses antes. Este é o motivo de existir a pasta [Minha Preparação](./preparacao). Conforme eu aprendia, escrevia um arquivo de texto no intuito de aprender ensinando e relembrar durante a Piscine. **Importante**: Quando eu os escrevi não tinha conhecimento sobre a `Norminette` nem da `Moulinette`, por isso são uma boa fonte para aprender, mas não os copie!
  
  O conteúdo da pasta [Piscine](./piscine) segue a regra da `Norminette` e passou pela `Moulinette`.
 
