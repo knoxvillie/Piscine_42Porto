@@ -24,20 +24,20 @@
 | :---:     | :--------------:| :----------:|
 | SHELL     | Shell00 | [100%](./Piscine/Shell00) |
 | SHELL     | Shell01 |  [85%](./Piscine./Shell01)  |
-| C | C00   | [100%](./Piscine/C00) | 
-| C | C01 | [100%](./Piscine/C01) | 
-| C | C02 | [100%](./Piscine/C02) | 
-| C | C03 |  [100%](./Piscine/C03) | 
-| C | C04 |  [100%](./Piscine/C04)| 
-| C | C05 | [80%](./Piscine/C05)| 
-| C | C06 | [100%](./Piscine/C06) | 
-| C | C07 |  [100%](./Piscine/C07)| 
-| C | C08 | [100%](./Piscine/C08) |
-| C | C09 |  [100%](./Piscine/C09)| 
-| C | C10 | [Não Fiz](./Piscine/C10) | 
-| C | C11 | [Não Fiz](./Piscine/C11) | 
-| C | C12 |  [Não Fiz](./Piscine/C12) | 
-| C | C13 | [Não Fiz](./Piscine/C13) | 
+| C | C00   | [100%](./Piscine/c00) | 
+| C | C01 | [100%](./Piscine/c01) | 
+| C | C02 | [100%](./Piscine/c02) | 
+| C | C03 |  [100%](./Piscine/c03) | 
+| C | C04 |  [100%](./Piscine/c04)| 
+| C | C05 | [80%](./Piscine/c05)| 
+| C | C06 | [100%](./Piscine/c06) | 
+| C | C07 |  [100%](./Piscine/c07)| 
+| C | C08 | [100%](./Piscine/c08) |
+| C | C09 |  [100%](./Piscine/c09)| 
+| C | C10 | [Não Fiz](./Piscine/c10) | 
+| C | C11 | [Não Fiz](./Piscine/c11) | 
+| C | C12 |  [Não Fiz](./Piscine/c12) | 
+| C | C13 | [Não Fiz](./Piscine/c13) | 
 
 ### Rushs e exames:
 | -| -    | Notas         | 
