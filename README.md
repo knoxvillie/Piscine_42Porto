@@ -22,8 +22,8 @@
  ### Lista de Projetos:
 |-          | Projetos      | Notas         |
 | :---:     | :--------------:| :----------:|
-| SHELL     | Shell00 | [100%](./Piscine/Shell00) |
-| SHELL     | Shell01 |  [85%](./Piscine./Shell01)  |
+| SHELL     | Shell00 | [100%](./Piscine/shell00) |
+| SHELL     | Shell01 |  [85%](./Piscine./shell01)  |
 | C | C00   | [100%](./Piscine/c00) | 
 | C | C01 | [100%](./Piscine/c01) | 
 | C | C02 | [100%](./Piscine/c02) | 
